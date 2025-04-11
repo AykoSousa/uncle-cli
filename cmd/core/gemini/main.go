@@ -9,7 +9,7 @@ import (
 	"google.golang.org/api/option"
 )
 
-func Prompt(API_KEY string, modelName string, prompt string) {
+func Gemini(API_KEY string, modelName string, prompt string) {
     ctx := context.Background()
 	client, err := genai.NewClient(ctx, option.WithAPIKey(API_KEY))
 	if err != nil {
@@ -23,5 +23,5 @@ func Prompt(API_KEY string, modelName string, prompt string) {
 		log.Fatal(err)
 	}
 
-	handlers.Print(resp)
+	handlers.GeminiResponse(resp)
 }
